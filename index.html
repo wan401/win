@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -11,174 +11,153 @@
             box-sizing: border-box;
         }
         body {
-            font-family: "微软雅黑", "Microsoft YaHei", sans-serif;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
             background: white;
             border-radius: 20px;
+            padding: 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 600px;
-            width: 100%;
-            overflow: hidden;
         }
         .header {
-            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-            color: white;
-            padding: 40px 30px;
             text-align: center;
+            margin-bottom: 30px;
         }
-        .header h1 {
+        .icon {
+            font-size: 64px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #333;
             font-size: 32px;
             margin-bottom: 10px;
         }
-        .header .version {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-        .header .badge {
+        .version-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
+            background: #4caf50;
+            color: white;
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 14px;
-            margin-top: 10px;
+            font-weight: bold;
         }
-        .content {
-            padding: 30px;
-        }
-        .section {
-            margin-bottom: 25px;
-        }
-        .section h2 {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 12px;
-            padding-left: 10px;
-            border-left: 4px solid #4CAF50;
+        .version-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
         }
         .changelog {
             background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            max-height: 200px;
-            overflow-y: auto;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .changelog h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .changelog ul {
+            list-style: none;
         }
         .changelog li {
-            list-style: none;
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
             color: #555;
-            font-size: 14px;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
         }
-        .changelog li:last-child {
-            border-bottom: none;
-        }
-        .changelog li::before {
-            content: "✓ ";
-            color: #4CAF50;
+        .changelog li:before {
+            content: "•";
+            color: #667eea;
             font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .download-section {
+            text-align: center;
+            margin-bottom: 30px;
         }
         .download-btn {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-align: center;
+            padding: 16px 48px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 12px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
         }
         .download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
-        .download-btn:active {
-            transform: translateY(0);
-        }
-        .info {
+        .file-info {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 30px;
             margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-        .info-item {
-            text-align: center;
-        }
-        .info-item .label {
-            font-size: 12px;
-            color: #999;
-            margin-bottom: 5px;
-        }
-        .info-item .value {
-            font-size: 16px;
-            color: #333;
-            font-weight: bold;
+            color: #888;
+            font-size: 14px;
         }
         .footer {
             text-align: center;
-            padding: 15px;
-            background: #f8f9fa;
             color: #999;
-            font-size: 12px;
+            font-size: 13px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🧹 系统清理工具Pro</h1>
-            <div class="version">最新版本 v9.6</div>
-            <div class="badge">稳定版</div>
-        </div>
-        <div class="content">
-            <div class="section">
-                <h2>更新日志</h2>
-                <ul class="changelog">
-                    <li>【v9.6】搭建完整自动更新体系，jsDelivr CDN永久托管</li>
-                    <li>【v9.6】新增启动3秒自动检测更新功能</li>
-                    <li>【v9.6】更新弹窗改为三按钮（自动更新/网站下载/取消）</li>
+        <div class="card">
+            <div class="header">
+                <div class="icon">🧹</div>
+                <h1>系统清理工具Pro</h1>
+                <div class="version-badge">最新版本 v9.8</div>
+            </div>
+            
+            <div class="version-info">
+                稳定版 | 已通过安全检测
+            </div>
+
+            <div class="changelog">
+                <h3>📋 更新日志</h3>
+                <ul>
+                    <li>【v9.8】修复磁盘监控进度条显示异常问题</li>
+                    <li>【v9.8】新增深度清理功能，支持按磁盘和文件类型扫描</li>
+                    <li>【v9.8】优化云端更新稳定性，改用GitHub Pages</li>
+                    <li>【v9.8】修复深度清理按钮无响应的问题</li>
+                    <li>【v9.8】优化界面布局，所有页面显示完整</li>
+                    <li>【v9.6】搭建完整自动更新体系</li>
+                    <li>【v9.6】新增启动自动检测更新功能</li>
                     <li>【v9.6】支持自动下载更新并替换程序</li>
-                    <li>【v9.6】4个CDN地址轮询检测，国内访问稳定</li>
-                    <li>修复版本更新弹窗不显示的问题</li>
-                    <li>加入启动自动检测更新功能</li>
-                    <li>支持自动下载更新并替换程序</li>
-                    <li>优化Gitee版本检测稳定性</li>
-                    <li>修复窗口拖拽内容不自适应的问题</li>
-                    <li>加入更多清理选项</li>
-                    <li>优化界面显示效果</li>
                 </ul>
             </div>
-            <a href="https://raw.githubusercontent.com/wan401/win/main/SystemCleanerPro.exe" class="download-btn" download>
-                ⬇️ 立即下载 v9.6
-            </a>
-            <div class="info">
-                <div class="info-item">
-                    <div class="label">文件大小</div>
-                    <div class="value">~765 KB</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">更新日期</div>
-                    <div class="value">2026-09-24</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">系统要求</div>
-                    <div class="value">Win7+</div>
+
+            <div class="download-section">
+                <a href="SystemCleanerPro.exe" class="download-btn">⬇️ 立即下载 v9.8</a>
+                <div class="file-info">
+                    <div>📦 文件大小：~780 KB</div>
+                    <div>📅 更新日期：2026-10-06</div>
+                    <div>💻 系统要求：Win7+</div>
                 </div>
             </div>
-        </div>
-        <div class="footer">
-            系统清理工具Pro © 2026 | 安全无毒 | 免费使用
+
+            <div class="footer">
+                系统清理工具Pro © 2026 | 安全无毒 | 免费使用
+            </div>
         </div>
     </div>
 </body>
